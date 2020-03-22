@@ -4,8 +4,8 @@
         "post0": {
             "title": "",
             "content": "Dagelijks publiceert het RIVM de inmiddels welbekende testkaart met daarop het aantal mensen dat per gemeente positief is getest op Covid-19. Het leek me interessant om het verloop per gemeente te bekijken. Daarom heb ik de bronfiles van het RIVM gedownload en hier wat grafieken van gemaakt. Hieronder zie je drie grafieken: . Absoluut: Dit laat het totaal aantal gevallen zien | Relatief: Dit laat het totaal aantal gevallen zien per 100.000 inwoners | Groei: Dit laat de toename van het aantal gevallen zien van de afgelopen dagen. Een factor 2 betekent dat het aantal gevallen 2x zo groot is geworden in 4 dagen. 0 Betekent dat het gelijk is gebleven. Het totaal aantal gevallen kan natuurlijk nooit minder worden | . Dag 0 is 3 maart, hiervoor kon ik geen data terugvinden op de site van het RIVM. Gebruik de slider om de ontwikkeling te zien. . De slider kan wat langzaam zijn, dus heb wat geduld bij het bewegen ervan . . Important: Omdat Nederland lang niet alle gevallen test, is een laag aantal geen garantie dat er geen gevallen zijn in de gemeente! Het aantal werkelijke gevallen is waarschijnlijk een stuk hoger dan het aantal positieve testen. . . Warning: Je ziet dat sommige lijntjes heel erg stijl omhoog gaan. De enige manier om ze te laten afvlakken is door minder besmettingen. Houd je dus aan de adviezen. . . Note: Ik ben verder geen specialist en heb deze data ook gewoon van het RIVM. D&#8217;r kunnen dus ook geen rechten aan worden ontleend, maar voel je vrij om het te gebruiken. Heb je tips laat maar weten! . . Tip: Bedankt Fastpages (heel handige manier om Jupyter notebooks te bloggen) en Altair (voor de visualisaties). Super om dit eens te proberen. .",
-            "url": "https://jvanelteren.github.io/blog/2020/03/22/2020-03-21-_analyse.html",
-            "relUrl": "/2020/03/22/2020-03-21-_analyse.html",
+            "url": "https://jvanelteren.github.io/blog/2020/03/22/2020-03-22-analyse.html",
+            "relUrl": "/2020/03/22/2020-03-22-analyse.html",
             "date": " • Mar 22, 2020"
         }
         
