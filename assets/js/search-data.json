@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Flight patterns in the Netherlands",
-            "content": "import altair as alt test = df.groupby([&#39;date&#39;])[&#39;callsign&#39;].nunique().reset_index() alt.Chart(test).mark_line().encode( x=alt.X(field=&#39;date&#39;,type=&#39;nominal&#39;), y=alt.Y(field=&#39;callsign&#39;, title=&#39;number of flights&#39;,type=&#39;quantitative&#39;), # color=alt.Color(field =&#39;date&#39;,type=&#39;ordinal&#39;), ) . # wierd velocity anomaly bla = df.loc[(df[&#39;callsign&#39;]==&#39;IBE33GV &#39;) &amp; (df[&#39;time&#39;]&gt;1581350090) &amp; (df[&#39;time&#39;]&lt;1581350330)] alt.Chart(bla).mark_line().encode( x=alt.X(field=&#39;time&#39;,type=&#39;nominal&#39;), y=alt.Y(field=&#39;velocity&#39;, title=&#39;fulltime flying aircraft equivalent&#39;,type=&#39;quantitative&#39;), ) .",
+            "content": "Start or landing | Departure or arrival | Above 7000 meters | . Vertical rate (red=descending, blue=ascending) | | Mean Altitude (darker = lower flying aircraft) | Mean Altitude (darker = lower flying aircraft) | . 2020-03-09 | 2020-03-16 | 2020-03-23 | 2020-03-30 | 2020-04-06 | . heli | luchtfoto | trauma | . politie | military | kustwacht | . | | | .",
             "url": "https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html",
             "relUrl": "/2020/04/17/flight_visualize.html",
             "date": " • Apr 17, 2020"
