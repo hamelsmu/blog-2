@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html" />
 <meta property="og:url" content="https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/_notebooks/flight/header.PNG" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/images/flightheader.p" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-17T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Visualizing 3.5 million datapoints","@type":"BlogPosting","headline":"Exploring flight patterns in the Netherlands","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","image":"https://jvanelteren.github.io/blog/_notebooks/flight/header.PNG","url":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Visualizing 3.5 million datapoints","@type":"BlogPosting","headline":"Exploring flight patterns in the Netherlands","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","image":"https://jvanelteren.github.io/blog/images/flightheader.p","url":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jvanelteren.github.io/blog/feed.xml" title="Jesse van Elteren" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -36,11 +36,11 @@
 <link rel="canonical" href="https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html" />
 <meta property="og:url" content="https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/_notebooks/flight/header.PNG" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/images/flightheader.p" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-04-17T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Visualizing 3.5 million datapoints","@type":"BlogPosting","headline":"Exploring flight patterns in the Netherlands","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","image":"https://jvanelteren.github.io/blog/_notebooks/flight/header.PNG","url":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Visualizing 3.5 million datapoints","@type":"BlogPosting","headline":"Exploring flight patterns in the Netherlands","dateModified":"2020-04-17T00:00:00-05:00","datePublished":"2020-04-17T00:00:00-05:00","image":"https://jvanelteren.github.io/blog/images/flightheader.p","url":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/2020/04/17/flight_visualize.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -109,7 +109,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      3 min read
     
 </span></p>
 
@@ -158,7 +158,7 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some years ago I was enjoying my sleep during the weekend when a loud airplane flew over our house and rudely awakened me at 5:00 in the morning. I couldn’t get back to sleep and decided to use these precious early hours to visualize the air traffic around Hilversum. Turns out every plane is equipped with a device called a <a href="https://en.wikipedia.org/wiki/Transponder">transponder</a> that transmits flight data about the flight into the air. Organizations like OpenSky [<a href="https://opensky-network.org/">https://opensky-network.org/</a>] aggregate these data and make them available. In the end the below a screenshot of the result.</p>
+<p>Some years ago I was enjoying my sleep during the weekend when a loud airplane flew over our house and rudely awakened me at 5:00 in the morning. I couldn’t get back to sleep and decided to use these precious early hours to visualize the air traffic around Hilversum. Turns out every plane is equipped with a device called a <a href="https://en.wikipedia.org/wiki/Transponder">transponder</a> that transmits flight data about the flight into the air. Organizations like OpenSky [<a href="https://opensky-network.org/">https://opensky-network.org/</a>] aggregate these data and make them available. Below a screenshot of the result.</p>
 
 </div>
 </div>
@@ -172,7 +172,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>But when revisiting this project, I felt there were more opportunities with the data. So I obtained the air traffic above the Netherlands from February to April (monday's only), resulting in 11 full days of traffic equaling 3.5 million datapoints (each aircraft is registered every 10 seconds. Below is a first visualisation.</p>
+<p>But when revisiting this project, I felt there were more opportunities. I obtained air traffic above the Netherlands from February to April (monday's only), resulting in 11 full days of traffic equaling 3.5 million datapoints (each aircraft is registered every 10 seconds). Below a first visualisation.</p>
 
 </div>
 </div>
@@ -203,8 +203,8 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can clearly see that Amsterdam is the hotspot of all the traffic and there are many different things going on. In the remainder of the post, let's see what interesting patterns and visualisations we can make. I won't plot the map anymore because the graphs are rendered more nice, so be sure to remember where Amsterdam is!</p>
-<p>Let's first split the traffic by altitude. If you watch this post on a computer, I recommend zooming in with ctrl+mouswheel. On mobile you know how to zoom.</p>
+<p>You can clearly see that Amsterdam is the hotspot of all the traffic. Let's see if there are more interesting patterns and visualisations. I won't plot the map anymore because the graphs are rendered better without, so be sure to remember where Amsterdam is!</p>
+<p>Let's first split the traffic by altitude. If you watch this post on a computer, I recommend zooming in with ctrl+mousewheel.</p>
 
 </div>
 </div>
@@ -234,11 +234,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Red: it's possible to see airfield Groningen and Eindhoven, and bottom right Dusseldorf and bottom center Brussels. </li>
-<li>Blue: it's nice to see all the complex movements to fly the traffic in and out of Amsterdam. These are the <a href="https://nl.wikipedia.org/wiki/Standard_terminal_arrival_route">STAR</a> and <a href="https://en.wikipedia.org/wiki/Standard_instrument_departure">SIDs</a>, standard routes being flown to keep the traffic manageable. We can also make a distinction in flight level</li>
-<li>Green: just aircraft passing over.</li>
+<li>Red: Airfields such as Eelde, Eindhoven, Dusseldorf and Brussels. </li>
+<li>Blue: All the complex movements of traffic in and out of Amsterdam. These are the <a href="https://nl.wikipedia.org/wiki/Standard_terminal_arrival_route">STAR</a> and <a href="https://en.wikipedia.org/wiki/Standard_instrument_departure">SIDs</a>, standard routes being flown to keep the traffic manageable.</li>
+<li>Green: Aircraft passing over in mostly straight tracks.</li>
 </ul>
-<p>There are more properties in the data, such as altitude, vertical speed and velocity. These graphs look at the mean of these properaties and thus don't give information about the amount of flights. I've used different colormaps for aestetic purposes :)</p>
+<p>There are more properties in the data, such as altitude, vertical speed and velocity. The below graphs inspect the mean of these properaties and thus don't give information about the amount of flights. I've used different colormaps for aestetic purposes :)</p>
 
 </div>
 </div>
@@ -268,10 +268,10 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Top left all the arriving flights are in red and departures in blue. <a href="https://www.dutchvacc.nl/charts/">Here</a> you can find charts for Dutch routes. E.g <a href="https://www.lvnl.nl/eaip/2020-04-09-AIRAC/graphics/eAIP/EH-AD-2.EHAM-TRAN-18C-18R.pdf">flights to runways 18R and 18C</a> are flying over the North Sea or from Lelystad</li>
+<li>Top left all the arriving flights are red and departures are blue. <a href="https://www.dutchvacc.nl/charts/">Here</a> you can find charts for Dutch routes. E.g <a href="https://www.lvnl.nl/eaip/2020-04-09-AIRAC/graphics/eAIP/EH-AD-2.EHAM-TRAN-18C-18R.pdf">flights to runways 18R and 18C</a> are flying over the North Sea or from Lelystad</li>
 <li>Top right basically shows that closer to an airport aircraft are flying lower. To be expected. Next!</li>
-<li>Bottom left looks like a full disco, but compare it with the top left graph: Departing flights are quickly climbing to purple, whereas arriving flights are descending more slowly. Probably at the red and orange colors the noise pollution is the largest.</li>
-<li>Bottom right shows the average speed of the aircraft. The line going south could be flights from Amsterdam to Brussels?</li>
+<li>Bottom left looks like a full disco, but compare it with the top left graph: Departing flights are quickly climbing to purple, whereas arriving flights are descending more slowly.</li>
+<li>Bottom right shows the average speed of the aircraft. Also to be expected that closer to the airports aircraft are flying slower.</li>
 </ul>
 <p>And because COVID-19 is here, let's plot the data of the past weeks.</p>
 
@@ -370,21 +370,21 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The graph also shows the dramatic slowdown to about 1/8 of the original volume. This has been analyzed more extensively <a href="https://traffic-viz.github.io/scenarios/covid19.html">here</a>.</p>
-<p>Daily 2700 flights above the Netherlands (including some North Sea), that is a lot! Taking the time in Dutch airspace into account that is the equivalent of about 35 aircraft 24/7 in the air!</p>
+<p>The fire on the left is slowly turning into a collection of night flies: the slowdown of traffic can be easily seen.
+The graph shows the dramatic slowdown to about 1/8 of the original volume. This has been analyzed more extensively <a href="https://traffic-viz.github.io/scenarios/covid19.html">here</a>.</p>
+<p>'Normally' there are 2700 flights above the Netherlands (including some North Sea). Taking the time in account that is the equivalent of about 35 aircraft flying 24/7!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The fire on the left is slowly turning into a collection of night flies: the slowdown of traffic can be easily seen.</p>
 <p>I also went through callsigns that occur most often. Turns out there are many interesting aircraft to be found. Let's make it into a quiz: which pattern belongs to:</p>
 <ul>
 <li>The coastguard</li>
 <li>Aerial photography</li>
 <li>Military flights</li>
-<li>Emergency care flights (trau)</li>
+<li>Emergency care flights (trauma)</li>
 <li>Police helicopters</li>
 <li>Commercial helicopter flights</li>
 </ul>
@@ -417,7 +417,7 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's end with a colorization with a certain shade of blue. Left a subset of the most frequently flown locations, right every fligt. Can you guess what type of flights they represent?</p>
+<p>Let's end with some visualisations with a certain shade of blue. What type of flights do they represent?</p>
 
 </div>
 </div>
@@ -456,6 +456,7 @@ window.onload = wrap_img;
 <li>E = <a href="https://www.defensie.nl/onderwerpen/materieel/vliegtuigen-en-helikopters/dornier-228-212-kustwacht">Coast Guard</a>, with callsign NCG</li>
 <li>F = Military. In april a NATO flight departed from NATO Air Base Geilenkirchen with a <a href="https://en.wikipedia.org/wiki/Boeing_E-3_Sentry">Boeing E-3 Sentry</a></li>
 </ul>
+<p>And the blues represent our flagship carrier KLM!</p>
 
 </div>
 </div>
