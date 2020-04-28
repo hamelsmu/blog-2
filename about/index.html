@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://jvanelteren.github.io/blog/about/" />
 <meta property="og:site_name" content="Jesse van Elteren" />
 <script type="application/ld+json">
-{"description":"Applied data science","headline":"About Me","@type":"WebSite","url":"https://jvanelteren.github.io/blog/about/","name":"Jesse van Elteren","@context":"https://schema.org"}</script>
+{"description":"Applied data science","@type":"WebSite","headline":"About Me","url":"https://jvanelteren.github.io/blog/about/","name":"Jesse van Elteren","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jvanelteren.github.io/blog/feed.xml" title="Jesse van Elteren" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -32,7 +32,7 @@
 <meta property="og:url" content="https://jvanelteren.github.io/blog/about/" />
 <meta property="og:site_name" content="Jesse van Elteren" />
 <script type="application/ld+json">
-{"description":"Applied data science","headline":"About Me","@type":"WebSite","url":"https://jvanelteren.github.io/blog/about/","name":"Jesse van Elteren","@context":"https://schema.org"}</script>
+{"description":"Applied data science","@type":"WebSite","headline":"About Me","url":"https://jvanelteren.github.io/blog/about/","name":"Jesse van Elteren","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -44,12 +44,29 @@
 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+<script type="text/javascript">
+require.config({
+  paths: {
+    jquery: 'https://code.jquery.com/jquery-3.5.0.min',
+    plotly: 'https://cdn.plot.ly/plotly-latest.min'
+  },
+
+  shim: {
+    plotly: {
+      deps: ['jquery'],
+      exports: 'plotly'
+    }
+  }
+});
+</script>
+
 <script>
 function wrap_img(fn) {
     if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
         var elements = document.querySelectorAll(".post img");
         Array.prototype.forEach.call(elements, function(el, i) {
-            if (el.getAttribute("title")) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
                 const caption = document.createElement('figcaption');
                 var node = document.createTextNode(el.getAttribute("title"));
                 caption.appendChild(node);
@@ -97,7 +114,17 @@ window.onload = wrap_img;
   </header>
 
   <div class="post-content">
-    <p>Click to go to my <a href="https://www.linkedin.com/in/jessevanelteren/">LinkedIn profile</a>.</p>
+    <p>This is where you put the contents of your <em>About</em> page. Like all your pages, it’s in <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a> format.</p>
+
+<p>This website is powered by <strong><a href="https://github.com/fastai/fastpages">fastpages</a></strong> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>a blogging platform that natively supports Jupyter notebooks in addition to other formats. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
   </div>
 
