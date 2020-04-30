@@ -1,0 +1,998 @@
+Jesse@Tommy MINGW64 ~/documents/github/projects/blog (master)
+$ "C:\Program Files (x86)\GnuWin32\bin\make.exe" build
+chmod 777 Gemfile.lock
+docker-compose stop || true; docker-compose rm || true;
+ERROR: Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
+No stopped containers
+docker build --no-cache -t hamelsmu/fastpages-nbdev -f _action_files/fastpages-nbdev.Dockerfile .
+Sending build context to Docker daemon  398.9MB
+Step 1/8 : FROM python:3-slim-stretch
+3-slim-stretch: Pulling from library/python
+8f91359f1fff: Already exists                                                                                            502ac059b4cd: Pull complete                                                                                             cfd307573f01: Pull complete                                                                                             65beb65381ee: Pull complete                                                                                             4c21f9ed2a53: Pull complete                                                                                             Digest: sha256:88c98d55716d52ffcf51a2861757e351d6b1ce52b27e936d668fefd6d659f2e8
+Status: Downloaded newer image for python:3-slim-stretch
+ ---> 7691d3cb6cbc
+Step 2/8 : RUN pip install --upgrade pip
+ ---> Running in 910b4d781042
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/54/2e/df11ea7e23e7e761d484ed3740285a34e38548cf2bad2bed3dd5768ec8b9/pip-20.1-py2.py3-none-any.whl (1.5MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.2.3
+    Uninstalling pip-19.2.3:
+      Successfully uninstalled pip-19.2.3
+Successfully installed pip-20.1
+Removing intermediate container 910b4d781042
+ ---> b90dce9a518e
+Step 3/8 : RUN apt-get update; apt-get -y install wget git jq dos2unix
+ ---> Running in e3df76f94a5d
+Ign:1 http://deb.debian.org/debian stretch InRelease
+Get:2 http://deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:3 http://security.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:4 http://deb.debian.org/debian stretch Release [118 kB]
+Get:5 http://deb.debian.org/debian stretch Release.gpg [2410 B]
+Get:6 http://deb.debian.org/debian stretch-updates/main amd64 Packages [27.9 kB]
+Get:7 http://security.debian.org/debian-security stretch/updates/main amd64 Packages [525 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 Packages [7083 kB]
+Fetched 7942 kB in 14s (546 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  git-man krb5-locales less libbsd0 libcurl3-gnutls libedit2 liberror-perl
+  libgmp10 libgnutls30 libgpm2 libgssapi-krb5-2 libhogweed4 libidn11 libidn2-0
+  libjq1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2
+  libldap-common libncurses5 libnettle6 libnghttp2-14 libonig4 libp11-kit0
+  libperl5.24 libpopt0 libpsl5 librtmp1 libsasl2-2 libsasl2-modules
+  libsasl2-modules-db libssh2-1 libssl1.0.2 libtasn1-6 libunistring0 libx11-6
+  libx11-data libxau6 libxcb1 libxdmcp6 libxext6 libxmuu1 openssh-client patch
+  perl perl-base perl-modules-5.24 publicsuffix rename rsync xauth
+Suggested packages:
+  gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+  git-gui gitk gitweb git-arch git-cvs git-mediawiki git-svn gnutls-bin gpm
+  krb5-doc krb5-user libsasl2-modules-gssapi-mit
+  | libsasl2-modules-gssapi-heimdal libsasl2-modules-ldap libsasl2-modules-otp
+  libsasl2-modules-sql keychain libpam-ssh monkeysphere ssh-askpass ed
+  diffutils-doc perl-doc libterm-readline-gnu-perl
+  | libterm-readline-perl-perl make openssh-server
+The following NEW packages will be installed:
+  dos2unix git git-man jq krb5-locales less libbsd0 libcurl3-gnutls libedit2
+  liberror-perl libgmp10 libgnutls30 libgpm2 libgssapi-krb5-2 libhogweed4
+  libidn11 libidn2-0 libjq1 libk5crypto3 libkeyutils1 libkrb5-3
+  libkrb5support0 libldap-2.4-2 libldap-common libncurses5 libnettle6
+  libnghttp2-14 libonig4 libp11-kit0 libperl5.24 libpopt0 libpsl5 librtmp1
+  libsasl2-2 libsasl2-modules libsasl2-modules-db libssh2-1 libssl1.0.2
+  libtasn1-6 libunistring0 libx11-6 libx11-data libxau6 libxcb1 libxdmcp6
+  libxext6 libxmuu1 openssh-client patch perl perl-modules-5.24 publicsuffix
+  rename rsync wget xauth
+The following packages will be upgraded:
+  perl-base
+1 upgraded, 56 newly installed, 0 to remove and 9 not upgraded.
+Need to get 23.5 MB of archives.
+After this operation, 102 MB of additional disk space will be used.
+Get:1 http://security.debian.org/debian-security stretch/updates/main amd64 libldap-common all 2.4.44+dfsg-5+deb9u4 [85.7 kB]
+Get:2 http://security.debian.org/debian-security stretch/updates/main amd64 libldap-2.4-2 amd64 2.4.44+dfsg-5+deb9u4 [219 kB]
+Get:3 http://deb.debian.org/debian stretch/main amd64 perl-base amd64 5.24.1-3+deb9u6 [1345 kB]
+Get:4 http://security.debian.org/debian-security stretch/updates/main amd64 libcurl3-gnutls amd64 7.52.1-5+deb9u10 [290 kB]
+Get:5 http://security.debian.org/debian-security stretch/updates/main amd64 git-man all 1:2.11.0-3+deb9u7 [1436 kB]
+Get:6 http://security.debian.org/debian-security stretch/updates/main amd64 git amd64 1:2.11.0-3+deb9u7 [4170 kB]
+Get:7 http://deb.debian.org/debian stretch/main amd64 perl-modules-5.24 all 5.24.1-3+deb9u6 [2725 kB]
+Get:8 http://deb.debian.org/debian stretch/main amd64 libperl5.24 amd64 5.24.1-3+deb9u6 [3525 kB]
+Get:9 http://deb.debian.org/debian stretch/main amd64 perl amd64 5.24.1-3+deb9u6 [218 kB]
+Get:10 http://deb.debian.org/debian stretch/main amd64 libgmp10 amd64 2:6.1.2+dfsg-1 [253 kB]
+Get:11 http://deb.debian.org/debian stretch/main amd64 libnettle6 amd64 3.3-1+b2 [192 kB]
+Get:12 http://deb.debian.org/debian stretch/main amd64 libhogweed4 amd64 3.3-1+b2 [136 kB]
+Get:13 http://deb.debian.org/debian stretch/main amd64 libidn11 amd64 1.33-1+deb9u1 [115 kB]
+Get:14 http://deb.debian.org/debian stretch/main amd64 libp11-kit0 amd64 0.23.3-2 [111 kB]
+Get:15 http://deb.debian.org/debian stretch/main amd64 libtasn1-6 amd64 4.10-1.1+deb9u1 [50.6 kB]
+Get:16 http://deb.debian.org/debian stretch/main amd64 libgnutls30 amd64 3.5.8-5+deb9u4 [896 kB]
+Get:17 http://deb.debian.org/debian stretch/main amd64 libkeyutils1 amd64 1.5.9-9 [12.4 kB]
+Get:18 http://deb.debian.org/debian stretch/main amd64 libkrb5support0 amd64 1.15-1+deb9u1 [61.9 kB]
+Get:19 http://deb.debian.org/debian stretch/main amd64 libk5crypto3 amd64 1.15-1+deb9u1 [119 kB]
+Get:20 http://deb.debian.org/debian stretch/main amd64 libkrb5-3 amd64 1.15-1+deb9u1 [311 kB]
+Get:21 http://deb.debian.org/debian stretch/main amd64 libgssapi-krb5-2 amd64 1.15-1+deb9u1 [155 kB]
+Get:22 http://deb.debian.org/debian stretch/main amd64 libunistring0 amd64 0.9.6+really0.9.3-0.1 [279 kB]
+Get:23 http://deb.debian.org/debian stretch/main amd64 libidn2-0 amd64 0.16-1+deb9u1 [60.7 kB]
+Get:24 http://deb.debian.org/debian stretch/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3+deb9u1 [68.4 kB]
+Get:25 http://deb.debian.org/debian stretch/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3+deb9u1 [105 kB]
+Get:26 http://deb.debian.org/debian stretch/main amd64 libnghttp2-14 amd64 1.18.1-1+deb9u1 [79.2 kB]
+Get:27 http://deb.debian.org/debian stretch/main amd64 libpsl5 amd64 0.17.0-3 [41.8 kB]
+Get:28 http://deb.debian.org/debian stretch/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1+b1 [60.4 kB]
+Get:29 http://deb.debian.org/debian stretch/main amd64 libssh2-1 amd64 1.7.0-1+deb9u1 [139 kB]
+Get:30 http://deb.debian.org/debian stretch/main amd64 liberror-perl all 0.17024-1 [26.9 kB]
+Get:31 http://deb.debian.org/debian stretch/main amd64 libxau6 amd64 1:1.0.8-1 [20.7 kB]
+Get:32 http://deb.debian.org/debian stretch/main amd64 libpopt0 amd64 1.16-10+b2 [49.4 kB]
+Get:33 http://deb.debian.org/debian stretch/main amd64 libssl1.0.2 amd64 1.0.2u-1~deb9u1 [1304 kB]
+Get:34 http://deb.debian.org/debian stretch/main amd64 wget amd64 1.18-5+deb9u3 [800 kB]
+Get:35 http://deb.debian.org/debian stretch/main amd64 krb5-locales all 1.15-1+deb9u1 [93.8 kB]
+Get:36 http://deb.debian.org/debian stretch/main amd64 less amd64 481-2.1 [126 kB]
+Get:37 http://deb.debian.org/debian stretch/main amd64 libbsd0 amd64 0.8.3-1 [83.0 kB]
+Get:38 http://deb.debian.org/debian stretch/main amd64 libncurses5 amd64 6.0+20161126-1+deb9u2 [93.4 kB]
+Get:39 http://deb.debian.org/debian stretch/main amd64 libedit2 amd64 3.1-20160903-3 [84.8 kB]
+Get:40 http://deb.debian.org/debian stretch/main amd64 libgpm2 amd64 1.20.4-6.2+b1 [34.2 kB]
+Get:41 http://deb.debian.org/debian stretch/main amd64 openssh-client amd64 1:7.4p1-10+deb9u7 [780 kB]
+Get:42 http://deb.debian.org/debian stretch/main amd64 libonig4 amd64 6.1.3-2 [146 kB]
+Get:43 http://deb.debian.org/debian stretch/main amd64 libjq1 amd64 1.5+dfsg-1.3 [123 kB]
+Get:44 http://deb.debian.org/debian stretch/main amd64 jq amd64 1.5+dfsg-1.3 [58.6 kB]
+Get:45 http://deb.debian.org/debian stretch/main amd64 libsasl2-modules amd64 2.1.27~101-g0780600+dfsg-3+deb9u1 [102 kB]
+Get:46 http://deb.debian.org/debian stretch/main amd64 libxdmcp6 amd64 1:1.1.2-3 [26.3 kB]
+Get:47 http://deb.debian.org/debian stretch/main amd64 libxcb1 amd64 1.12-1 [133 kB]
+Get:48 http://deb.debian.org/debian stretch/main amd64 libx11-data all 2:1.6.4-3+deb9u1 [287 kB]
+Get:49 http://deb.debian.org/debian stretch/main amd64 libx11-6 amd64 2:1.6.4-3+deb9u1 [748 kB]
+Get:50 http://deb.debian.org/debian stretch/main amd64 libxext6 amd64 2:1.3.3-1+b2 [52.5 kB]
+Get:51 http://deb.debian.org/debian stretch/main amd64 libxmuu1 amd64 2:1.1.2-2 [23.5 kB]
+Get:52 http://deb.debian.org/debian stretch/main amd64 patch amd64 2.7.5-1+deb9u2 [112 kB]
+Get:53 http://deb.debian.org/debian stretch/main amd64 rename all 0.20-4 [12.5 kB]
+Get:54 http://deb.debian.org/debian stretch/main amd64 rsync amd64 3.1.2-1+deb9u2 [393 kB]
+Get:55 http://deb.debian.org/debian stretch/main amd64 xauth amd64 1:1.0.9-1+b2 [39.6 kB]
+Get:56 http://deb.debian.org/debian stretch/main amd64 dos2unix amd64 7.3.4-3 [368 kB]
+Get:57 http://deb.debian.org/debian stretch/main amd64 publicsuffix all 20190415.1030-0+deb9u1 [108 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 23.5 MB in 4s (5346 kB/s)
+(Reading database ... 6710 files and directories currently installed.)
+Preparing to unpack .../perl-base_5.24.1-3+deb9u6_amd64.deb ...
+Unpacking perl-base (5.24.1-3+deb9u6) over (5.24.1-3+deb9u5) ...
+Setting up perl-base (5.24.1-3+deb9u6) ...
+Selecting previously unselected package perl-modules-5.24.
+(Reading database ... 6710 files and directories currently installed.)
+Preparing to unpack .../00-perl-modules-5.24_5.24.1-3+deb9u6_all.deb ...
+Unpacking perl-modules-5.24 (5.24.1-3+deb9u6) ...
+Selecting previously unselected package libperl5.24:amd64.
+Preparing to unpack .../01-libperl5.24_5.24.1-3+deb9u6_amd64.deb ...
+Unpacking libperl5.24:amd64 (5.24.1-3+deb9u6) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../02-perl_5.24.1-3+deb9u6_amd64.deb ...
+Unpacking perl (5.24.1-3+deb9u6) ...
+Selecting previously unselected package libgmp10:amd64.
+Preparing to unpack .../03-libgmp10_2%3a6.1.2+dfsg-1_amd64.deb ...
+Unpacking libgmp10:amd64 (2:6.1.2+dfsg-1) ...
+Selecting previously unselected package libnettle6:amd64.
+Preparing to unpack .../04-libnettle6_3.3-1+b2_amd64.deb ...
+Unpacking libnettle6:amd64 (3.3-1+b2) ...
+Selecting previously unselected package libhogweed4:amd64.
+Preparing to unpack .../05-libhogweed4_3.3-1+b2_amd64.deb ...
+Unpacking libhogweed4:amd64 (3.3-1+b2) ...
+Selecting previously unselected package libidn11:amd64.
+Preparing to unpack .../06-libidn11_1.33-1+deb9u1_amd64.deb ...
+Unpacking libidn11:amd64 (1.33-1+deb9u1) ...
+Selecting previously unselected package libp11-kit0:amd64.
+Preparing to unpack .../07-libp11-kit0_0.23.3-2_amd64.deb ...
+Unpacking libp11-kit0:amd64 (0.23.3-2) ...
+Selecting previously unselected package libtasn1-6:amd64.
+Preparing to unpack .../08-libtasn1-6_4.10-1.1+deb9u1_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+Selecting previously unselected package libgnutls30:amd64.
+Preparing to unpack .../09-libgnutls30_3.5.8-5+deb9u4_amd64.deb ...
+Unpacking libgnutls30:amd64 (3.5.8-5+deb9u4) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../10-libkeyutils1_1.5.9-9_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.5.9-9) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../11-libkrb5support0_1.15-1+deb9u1_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.15-1+deb9u1) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../12-libk5crypto3_1.15-1+deb9u1_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.15-1+deb9u1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../13-libkrb5-3_1.15-1+deb9u1_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.15-1+deb9u1) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../14-libgssapi-krb5-2_1.15-1+deb9u1_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.15-1+deb9u1) ...
+Selecting previously unselected package libunistring0:amd64.
+Preparing to unpack .../15-libunistring0_0.9.6+really0.9.3-0.1_amd64.deb ...
+Unpacking libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Selecting previously unselected package libidn2-0:amd64.
+Preparing to unpack .../16-libidn2-0_0.16-1+deb9u1_amd64.deb ...
+Unpacking libidn2-0:amd64 (0.16-1+deb9u1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../17-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3+deb9u1_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../18-libsasl2-2_2.1.27~101-g0780600+dfsg-3+deb9u1_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../19-libldap-common_2.4.44+dfsg-5+deb9u4_all.deb ...
+Unpacking libldap-common (2.4.44+dfsg-5+deb9u4) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../20-libldap-2.4-2_2.4.44+dfsg-5+deb9u4_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u4) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../21-libnghttp2-14_1.18.1-1+deb9u1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.18.1-1+deb9u1) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../22-libpsl5_0.17.0-3_amd64.deb ...
+Unpacking libpsl5:amd64 (0.17.0-3) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../23-librtmp1_2.4+20151223.gitfa8646d.1-1+b1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Selecting previously unselected package libssh2-1:amd64.
+Preparing to unpack .../24-libssh2-1_1.7.0-1+deb9u1_amd64.deb ...
+Unpacking libssh2-1:amd64 (1.7.0-1+deb9u1) ...
+Selecting previously unselected package libcurl3-gnutls:amd64.
+Preparing to unpack .../25-libcurl3-gnutls_7.52.1-5+deb9u10_amd64.deb ...
+Unpacking libcurl3-gnutls:amd64 (7.52.1-5+deb9u10) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../26-liberror-perl_0.17024-1_all.deb ...
+Unpacking liberror-perl (0.17024-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../27-git-man_1%3a2.11.0-3+deb9u7_all.deb ...
+Unpacking git-man (1:2.11.0-3+deb9u7) ...
+Selecting previously unselected package git.
+Preparing to unpack .../28-git_1%3a2.11.0-3+deb9u7_amd64.deb ...
+Unpacking git (1:2.11.0-3+deb9u7) ...
+Selecting previously unselected package libxau6:amd64.
+Preparing to unpack .../29-libxau6_1%3a1.0.8-1_amd64.deb ...
+Unpacking libxau6:amd64 (1:1.0.8-1) ...
+Selecting previously unselected package libpopt0:amd64.
+Preparing to unpack .../30-libpopt0_1.16-10+b2_amd64.deb ...
+Unpacking libpopt0:amd64 (1.16-10+b2) ...
+Selecting previously unselected package libssl1.0.2:amd64.
+Preparing to unpack .../31-libssl1.0.2_1.0.2u-1~deb9u1_amd64.deb ...
+Unpacking libssl1.0.2:amd64 (1.0.2u-1~deb9u1) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../32-wget_1.18-5+deb9u3_amd64.deb ...
+Unpacking wget (1.18-5+deb9u3) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../33-krb5-locales_1.15-1+deb9u1_all.deb ...
+Unpacking krb5-locales (1.15-1+deb9u1) ...
+Selecting previously unselected package less.
+Preparing to unpack .../34-less_481-2.1_amd64.deb ...
+Unpacking less (481-2.1) ...
+Selecting previously unselected package libbsd0:amd64.
+Preparing to unpack .../35-libbsd0_0.8.3-1_amd64.deb ...
+Unpacking libbsd0:amd64 (0.8.3-1) ...
+Selecting previously unselected package libncurses5:amd64.
+Preparing to unpack .../36-libncurses5_6.0+20161126-1+deb9u2_amd64.deb ...
+Unpacking libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+Selecting previously unselected package libedit2:amd64.
+Preparing to unpack .../37-libedit2_3.1-20160903-3_amd64.deb ...
+Unpacking libedit2:amd64 (3.1-20160903-3) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../38-libgpm2_1.20.4-6.2+b1_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.4-6.2+b1) ...
+Selecting previously unselected package openssh-client.
+Preparing to unpack .../39-openssh-client_1%3a7.4p1-10+deb9u7_amd64.deb ...
+Unpacking openssh-client (1:7.4p1-10+deb9u7) ...
+Selecting previously unselected package libonig4:amd64.
+Preparing to unpack .../40-libonig4_6.1.3-2_amd64.deb ...
+Unpacking libonig4:amd64 (6.1.3-2) ...
+Selecting previously unselected package libjq1:amd64.
+Preparing to unpack .../41-libjq1_1.5+dfsg-1.3_amd64.deb ...
+Unpacking libjq1:amd64 (1.5+dfsg-1.3) ...
+Selecting previously unselected package jq.
+Preparing to unpack .../42-jq_1.5+dfsg-1.3_amd64.deb ...
+Unpacking jq (1.5+dfsg-1.3) ...
+Selecting previously unselected package libsasl2-modules:amd64.
+Preparing to unpack .../43-libsasl2-modules_2.1.27~101-g0780600+dfsg-3+deb9u1_amd64.deb ...
+Unpacking libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Selecting previously unselected package libxdmcp6:amd64.
+Preparing to unpack .../44-libxdmcp6_1%3a1.1.2-3_amd64.deb ...
+Unpacking libxdmcp6:amd64 (1:1.1.2-3) ...
+Selecting previously unselected package libxcb1:amd64.
+Preparing to unpack .../45-libxcb1_1.12-1_amd64.deb ...
+Unpacking libxcb1:amd64 (1.12-1) ...
+Selecting previously unselected package libx11-data.
+Preparing to unpack .../46-libx11-data_2%3a1.6.4-3+deb9u1_all.deb ...
+Unpacking libx11-data (2:1.6.4-3+deb9u1) ...
+Selecting previously unselected package libx11-6:amd64.
+Preparing to unpack .../47-libx11-6_2%3a1.6.4-3+deb9u1_amd64.deb ...
+Unpacking libx11-6:amd64 (2:1.6.4-3+deb9u1) ...
+Selecting previously unselected package libxext6:amd64.
+Preparing to unpack .../48-libxext6_2%3a1.3.3-1+b2_amd64.deb ...
+Unpacking libxext6:amd64 (2:1.3.3-1+b2) ...
+Selecting previously unselected package libxmuu1:amd64.
+Preparing to unpack .../49-libxmuu1_2%3a1.1.2-2_amd64.deb ...
+Unpacking libxmuu1:amd64 (2:1.1.2-2) ...
+Selecting previously unselected package patch.
+Preparing to unpack .../50-patch_2.7.5-1+deb9u2_amd64.deb ...
+Unpacking patch (2.7.5-1+deb9u2) ...
+Selecting previously unselected package rename.
+Preparing to unpack .../51-rename_0.20-4_all.deb ...
+Unpacking rename (0.20-4) ...
+Selecting previously unselected package rsync.
+Preparing to unpack .../52-rsync_3.1.2-1+deb9u2_amd64.deb ...
+Unpacking rsync (3.1.2-1+deb9u2) ...
+Selecting previously unselected package xauth.
+Preparing to unpack .../53-xauth_1%3a1.0.9-1+b2_amd64.deb ...
+Unpacking xauth (1:1.0.9-1+b2) ...
+Selecting previously unselected package dos2unix.
+Preparing to unpack .../54-dos2unix_7.3.4-3_amd64.deb ...
+Unpacking dos2unix (7.3.4-3) ...
+Selecting previously unselected package publicsuffix.
+Preparing to unpack .../55-publicsuffix_20190415.1030-0+deb9u1_all.deb ...
+Unpacking publicsuffix (20190415.1030-0+deb9u1) ...
+Setting up libncurses5:amd64 (6.0+20161126-1+deb9u2) ...
+Setting up perl-modules-5.24 (5.24.1-3+deb9u6) ...
+Setting up libperl5.24:amd64 (5.24.1-3+deb9u6) ...
+Setting up libnettle6:amd64 (3.3-1+b2) ...
+Setting up git-man (1:2.11.0-3+deb9u7) ...
+Setting up libpopt0:amd64 (1.16-10+b2) ...
+Setting up less (481-2.1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+Setting up libnghttp2-14:amd64 (1.18.1-1+deb9u1) ...
+Setting up libgpm2:amd64 (1.20.4-6.2+b1) ...
+Setting up libldap-common (2.4.44+dfsg-5+deb9u4) ...
+Setting up libonig4:amd64 (6.1.3-2) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Setting up dos2unix (7.3.4-3) ...
+Setting up libbsd0:amd64 (0.8.3-1) ...
+Setting up libtasn1-6:amd64 (4.10-1.1+deb9u1) ...
+Setting up rsync (3.1.2-1+deb9u2) ...
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of restart.
+Setting up perl (5.24.1-3+deb9u6) ...
+update-alternatives: using /usr/bin/prename to provide /usr/bin/rename (rename) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/rename.1.gz because associated file /usr/share/man/man1/prename.1.gz (of link group rename) doesn't exist
+Setting up libjq1:amd64 (1.5+dfsg-1.3) ...
+Setting up libssl1.0.2:amd64 (1.0.2u-1~deb9u1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+Setting up libgmp10:amd64 (2:6.1.2+dfsg-1) ...
+Setting up libssh2-1:amd64 (1.7.0-1+deb9u1) ...
+Setting up patch (2.7.5-1+deb9u2) ...
+Setting up krb5-locales (1.15-1+deb9u1) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Setting up publicsuffix (20190415.1030-0+deb9u1) ...
+Setting up libunistring0:amd64 (0.9.6+really0.9.3-0.1) ...
+Setting up libp11-kit0:amd64 (0.23.3-2) ...
+Setting up libxdmcp6:amd64 (1:1.1.2-3) ...
+Setting up libkeyutils1:amd64 (1.5.9-9) ...
+Setting up libsasl2-modules:amd64 (2.1.27~101-g0780600+dfsg-3+deb9u1) ...
+Setting up libx11-data (2:1.6.4-3+deb9u1) ...
+Setting up libxau6:amd64 (1:1.0.8-1) ...
+Setting up libidn11:amd64 (1.33-1+deb9u1) ...
+Setting up libedit2:amd64 (3.1-20160903-3) ...
+Setting up jq (1.5+dfsg-1.3) ...
+Setting up libidn2-0:amd64 (0.16-1+deb9u1) ...
+Setting up liberror-perl (0.17024-1) ...
+Setting up rename (0.20-4) ...
+update-alternatives: using /usr/bin/file-rename to provide /usr/bin/rename (rename) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/rename.1.gz because associated file /usr/share/man/man1/file-rename.1p.gz (of link group rename) doesn't exist
+Setting up libpsl5:amd64 (0.17.0-3) ...
+Setting up libkrb5support0:amd64 (1.15-1+deb9u1) ...
+Setting up libhogweed4:amd64 (3.3-1+b2) ...
+Setting up libxcb1:amd64 (1.12-1) ...
+Setting up libk5crypto3:amd64 (1.15-1+deb9u1) ...
+Setting up libgnutls30:amd64 (3.5.8-5+deb9u4) ...
+Setting up libx11-6:amd64 (2:1.6.4-3+deb9u1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1+b1) ...
+Setting up libxmuu1:amd64 (2:1.1.2-2) ...
+Setting up libldap-2.4-2:amd64 (2.4.44+dfsg-5+deb9u4) ...
+Setting up wget (1.18-5+deb9u3) ...
+Setting up libkrb5-3:amd64 (1.15-1+deb9u1) ...
+Setting up libxext6:amd64 (2:1.3.3-1+b2) ...
+Setting up libgssapi-krb5-2:amd64 (1.15-1+deb9u1) ...
+Setting up xauth (1:1.0.9-1+b2) ...
+Setting up openssh-client (1:7.4p1-10+deb9u7) ...
+Setting up libcurl3-gnutls:amd64 (7.52.1-5+deb9u10) ...
+Setting up git (1:2.11.0-3+deb9u7) ...
+Processing triggers for libc-bin (2.24-11+deb9u4) ...
+Removing intermediate container e3df76f94a5d
+ ---> 1e0068157134
+Step 4/8 : RUN wget https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-1-amd64.deb
+ ---> Running in 07ee43c9d130
+--2020-04-30 06:41:20--  https://github.com/jgm/pandoc/releases/download/2.9.1.1/pandoc-2.9.1.1-1-amd64.deb
+Resolving github.com (github.com)... 140.82.118.4
+Connecting to github.com (github.com)|140.82.118.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github-production-release-asset-2e65be.s3.amazonaws.com/571770/a4b9e180-3000-11ea-86f8-5c8fe8b95901?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200430%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200430T073753Z&X-Amz-Expires=300&X-Amz-Signature=d33c092a0710a07b70df04d87101ac648350ff243bf1fdb309570bd626d60e14&X-Amz-SignedHeaders=host&actor_id=0&repo_id=571770&response-content-disposition=attachment%3B%20filename%3Dpandoc-2.9.1.1-1-amd64.deb&response-content-type=application%2Foctet-stream [following]
+--2020-04-30 06:41:21--  https://github-production-release-asset-2e65be.s3.amazonaws.com/571770/a4b9e180-3000-11ea-86f8-5c8fe8b95901?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200430%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200430T073753Z&X-Amz-Expires=300&X-Amz-Signature=d33c092a0710a07b70df04d87101ac648350ff243bf1fdb309570bd626d60e14&X-Amz-SignedHeaders=host&actor_id=0&repo_id=571770&response-content-disposition=attachment%3B%20filename%3Dpandoc-2.9.1.1-1-amd64.deb&response-content-type=application%2Foctet-stream
+Resolving github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)... 52.216.240.44
+Connecting to github-production-release-asset-2e65be.s3.amazonaws.com (github-production-release-asset-2e65be.s3.amazonaws.com)|52.216.240.44|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 12557972 (12M) [application/octet-stream]
+Saving to: ‘pandoc-2.9.1.1-1-amd64.deb’
+
+     0K .......... .......... .......... .......... ..........  0%  480K 25s
+    50K .......... .......... .......... .......... ..........  0%  498K 25s
+   100K .......... .......... .......... .......... ..........  1% 1.79M 19s
+   150K .......... .......... .......... .......... ..........  1%  583K 19s
+   200K .......... .......... .......... .......... ..........  2% 1.50M 17s
+   250K .......... .......... .......... .......... ..........  2%  937K 16s
+   300K .......... .......... .......... .......... ..........  2% 2.19M 14s
+   350K .......... .......... .......... .......... ..........  3% 1.83M 13s
+   400K .......... .......... .......... .......... ..........  3%  628K 14s
+   450K .......... .......... .......... .......... ..........  4% 1.63M 13s
+   500K .......... .......... .......... .......... ..........  4% 2.28M 12s
+   550K .......... .......... .......... .......... ..........  4% 1.69M 12s
+   600K .......... .......... .......... .......... ..........  5% 1.65M 11s
+   650K .......... .......... .......... .......... ..........  5% 1.47M 11s
+   700K .......... .......... .......... .......... ..........  6% 1.42M 11s
+   750K .......... .......... .......... .......... ..........  6% 1.72M 11s
+   800K .......... .......... .......... .......... ..........  6% 1.46M 10s
+   850K .......... .......... .......... .......... ..........  7%  859K 10s
+   900K .......... .......... .......... .......... ..........  7% 1.45M 10s
+   950K .......... .......... .......... .......... ..........  8%  906K 10s
+  1000K .......... .......... .......... .......... ..........  8% 1.37M 10s
+  1050K .......... .......... .......... .......... ..........  8% 1.45M 10s
+  1100K .......... .......... .......... .......... ..........  9% 1.34M 10s
+  1150K .......... .......... .......... .......... ..........  9% 1.60M 10s
+  1200K .......... .......... .......... .......... .......... 10% 1.35M 10s
+  1250K .......... .......... .......... .......... .......... 10% 1.12M 10s
+  1300K .......... .......... .......... .......... .......... 11% 3.76M 9s
+  1350K .......... .......... .......... .......... .......... 11% 2.20M 9s
+  1400K .......... .......... .......... .......... .......... 11% 1.06M 9s
+  1450K .......... .......... .......... .......... .......... 12% 1.45M 9s
+  1500K .......... .......... .......... .......... .......... 12% 1.79M 9s
+  1550K .......... .......... .......... .......... .......... 13% 1.33M 9s
+  1600K .......... .......... .......... .......... .......... 13% 1.40M 9s
+  1650K .......... .......... .......... .......... .......... 13% 1.47M 9s
+  1700K .......... .......... .......... .......... .......... 14% 1.46M 9s
+  1750K .......... .......... .......... .......... .......... 14% 1.37M 8s
+  1800K .......... .......... .......... .......... .......... 15% 1.08M 8s
+  1850K .......... .......... .......... .......... .......... 15% 1.08M 8s
+  1900K .......... .......... .......... .......... .......... 15% 1.24M 8s
+  1950K .......... .......... .......... .......... .......... 16%  896K 8s
+  2000K .......... .......... .......... .......... .......... 16% 1.05M 8s
+  2050K .......... .......... .......... .......... .......... 17%  969K 8s
+  2100K .......... .......... .......... .......... .......... 17% 1.14M 8s
+  2150K .......... .......... .......... .......... .......... 17% 1.86M 8s
+  2200K .......... .......... .......... .......... .......... 18% 1.42M 8s
+  2250K .......... .......... .......... .......... .......... 18% 1.18M 8s
+  2300K .......... .......... .......... .......... .......... 19% 1.49M 8s
+  2350K .......... .......... .......... .......... .......... 19% 1.00M 8s
+  2400K .......... .......... .......... .......... .......... 19% 1.11M 8s
+  2450K .......... .......... .......... .......... .......... 20% 1.27M 8s
+  2500K .......... .......... .......... .......... .......... 20%  842K 8s
+  2550K .......... .......... .......... .......... .......... 21%  866K 8s
+  2600K .......... .......... .......... .......... .......... 21% 1.46M 8s
+  2650K .......... .......... .......... .......... .......... 22% 1.01M 8s
+  2700K .......... .......... .......... .......... .......... 22% 1.56M 8s
+  2750K .......... .......... .......... .......... .......... 22%  893K 8s
+  2800K .......... .......... .......... .......... .......... 23% 1.15M 8s
+  2850K .......... .......... .......... .......... .......... 23% 1.22M 8s
+  2900K .......... .......... .......... .......... .......... 24%  975K 8s
+  2950K .......... .......... .......... .......... .......... 24% 1.49M 8s
+  3000K .......... .......... .......... .......... .......... 24% 1.28M 8s
+  3050K .......... .......... .......... .......... .......... 25% 1.52M 8s
+  3100K .......... .......... .......... .......... .......... 25%  879K 8s
+  3150K .......... .......... .......... .......... .......... 26% 1.03M 8s
+  3200K .......... .......... .......... .......... .......... 26% 1.43M 8s
+  3250K .......... .......... .......... .......... .......... 26% 1.17M 7s
+  3300K .......... .......... .......... .......... .......... 27% 1.37M 7s
+  3350K .......... .......... .......... .......... .......... 27% 1.24M 7s
+  3400K .......... .......... .......... .......... .......... 28% 1.52M 7s
+  3450K .......... .......... .......... .......... .......... 28% 1.12M 7s
+  3500K .......... .......... .......... .......... .......... 28% 1.34M 7s
+  3550K .......... .......... .......... .......... .......... 29% 1.14M 7s
+  3600K .......... .......... .......... .......... .......... 29% 1.82M 7s
+  3650K .......... .......... .......... .......... .......... 30% 2.22M 7s
+  3700K .......... .......... .......... .......... .......... 30% 1.17M 7s
+  3750K .......... .......... .......... .......... .......... 30% 1008K 7s
+  3800K .......... .......... .......... .......... .......... 31% 1.22M 7s
+  3850K .......... .......... .......... .......... .......... 31% 1.30M 7s
+  3900K .......... .......... .......... .......... .......... 32% 1.27M 7s
+  3950K .......... .......... .......... .......... .......... 32% 1.08M 7s
+  4000K .......... .......... .......... .......... .......... 33% 1.26M 7s
+  4050K .......... .......... .......... .......... .......... 33% 1.34M 7s
+  4100K .......... .......... .......... .......... .......... 33% 1.28M 7s
+  4150K .......... .......... .......... .......... .......... 34% 1.09M 7s
+  4200K .......... .......... .......... .......... .......... 34% 1.38M 7s
+  4250K .......... .......... .......... .......... .......... 35% 1.14M 7s
+  4300K .......... .......... .......... .......... .......... 35% 1.25M 6s
+  4350K .......... .......... .......... .......... .......... 35% 5.04M 6s
+  4400K .......... .......... .......... .......... .......... 36% 6.41M 6s
+  4450K .......... .......... .......... .......... .......... 36% 6.00M 6s
+  4500K .......... .......... .......... .......... .......... 37% 4.98M 6s
+  4550K .......... .......... .......... .......... .......... 37% 3.36M 6s
+  4600K .......... .......... .......... .......... .......... 37% 2.01M 6s
+  4650K .......... .......... .......... .......... .......... 38% 1.79M 6s
+  4700K .......... .......... .......... .......... .......... 38% 2.17M 6s
+  4750K .......... .......... .......... .......... .......... 39% 1.92M 6s
+  4800K .......... .......... .......... .......... .......... 39% 2.56M 6s
+  4850K .......... .......... .......... .......... .......... 39% 1.42M 6s
+  4900K .......... .......... .......... .......... .......... 40% 1.50M 6s
+  4950K .......... .......... .......... .......... .......... 40% 1.21M 6s
+  5000K .......... .......... .......... .......... .......... 41% 1.44M 6s
+  5050K .......... .......... .......... .......... .......... 41% 1.31M 5s
+  5100K .......... .......... .......... .......... .......... 41% 1.29M 5s
+  5150K .......... .......... .......... .......... .......... 42% 1.25M 5s
+  5200K .......... .......... .......... .......... .......... 42% 1.28M 5s
+  5250K .......... .......... .......... .......... .......... 43% 1.18M 5s
+  5300K .......... .......... .......... .......... .......... 43% 1.41M 5s
+  5350K .......... .......... .......... .......... .......... 44% 1.23M 5s
+  5400K .......... .......... .......... .......... .......... 44% 2.05M 5s
+  5450K .......... .......... .......... .......... .......... 44% 1.27M 5s
+  5500K .......... .......... .......... .......... .......... 45%  979K 5s
+  5550K .......... .......... .......... .......... .......... 45% 1.47M 5s
+  5600K .......... .......... .......... .......... .......... 46% 1.27M 5s
+  5650K .......... .......... .......... .......... .......... 46% 1.44M 5s
+  5700K .......... .......... .......... .......... .......... 46% 1.27M 5s
+  5750K .......... .......... .......... .......... .......... 47% 1.04M 5s
+  5800K .......... .......... .......... .......... .......... 47% 1.24M 5s
+  5850K .......... .......... .......... .......... .......... 48% 1.60M 5s
+  5900K .......... .......... .......... .......... .......... 48% 1.57M 5s
+  5950K .......... .......... .......... .......... .......... 48% 1.78M 5s
+  6000K .......... .......... .......... .......... .......... 49% 2.38M 5s
+  6050K .......... .......... .......... .......... .......... 49% 2.45M 5s
+  6100K .......... .......... .......... .......... .......... 50% 2.34M 5s
+  6150K .......... .......... .......... .......... .......... 50% 1.75M 5s
+  6200K .......... .......... .......... .......... .......... 50% 2.99M 4s
+  6250K .......... .......... .......... .......... .......... 51% 1.93M 4s
+  6300K .......... .......... .......... .......... .......... 51% 2.15M 4s
+  6350K .......... .......... .......... .......... .......... 52% 1.27M 4s
+  6400K .......... .......... .......... .......... .......... 52% 1.22M 4s
+  6450K .......... .......... .......... .......... .......... 53% 1.33M 4s
+  6500K .......... .......... .......... .......... .......... 53% 1.60M 4s
+  6550K .......... .......... .......... .......... .......... 53% 1.11M 4s
+  6600K .......... .......... .......... .......... .......... 54% 1.42M 4s
+  6650K .......... .......... .......... .......... .......... 54% 1.30M 4s
+  6700K .......... .......... .......... .......... .......... 55% 1.99M 4s
+  6750K .......... .......... .......... .......... .......... 55% 1.24M 4s
+  6800K .......... .......... .......... .......... .......... 55%  830K 4s
+  6850K .......... .......... .......... .......... .......... 56% 1.01M 4s
+  6900K .......... .......... .......... .......... .......... 56% 1.17M 4s
+  6950K .......... .......... .......... .......... .......... 57%  756K 4s
+  7000K .......... .......... .......... .......... .......... 57% 1.06M 4s
+  7050K .......... .......... .......... .......... .......... 57% 1.24M 4s
+  7100K .......... .......... .......... .......... .......... 58% 2.27M 4s
+  7150K .......... .......... .......... .......... .......... 58% 2.24M 4s
+  7200K .......... .......... .......... .......... .......... 59% 1.73M 4s
+  7250K .......... .......... .......... .......... .......... 59% 2.84M 4s
+  7300K .......... .......... .......... .......... .......... 59% 1.55M 4s
+  7350K .......... .......... .......... .......... .......... 60% 1.66M 4s
+  7400K .......... .......... .......... .......... .......... 60% 2.07M 4s
+  7450K .......... .......... .......... .......... .......... 61% 1.64M 4s
+  7500K .......... .......... .......... .......... .......... 61% 1.16M 3s
+  7550K .......... .......... .......... .......... .......... 61% 1.40M 3s
+  7600K .......... .......... .......... .......... .......... 62% 1.43M 3s
+  7650K .......... .......... .......... .......... .......... 62% 1.36M 3s
+  7700K .......... .......... .......... .......... .......... 63% 1.26M 3s
+  7750K .......... .......... .......... .......... .......... 63% 1.10M 3s
+  7800K .......... .......... .......... .......... .......... 64% 1.57M 3s
+  7850K .......... .......... .......... .......... .......... 64% 2.22M 3s
+  7900K .......... .......... .......... .......... .......... 64% 1024K 3s
+  7950K .......... .......... .......... .......... .......... 65% 1.39M 3s
+  8000K .......... .......... .......... .......... .......... 65% 1.66M 3s
+  8050K .......... .......... .......... .......... .......... 66% 1.28M 3s
+  8100K .......... .......... .......... .......... .......... 66% 1.27M 3s
+  8150K .......... .......... .......... .......... .......... 66%  906K 3s
+  8200K .......... .......... .......... .......... .......... 67% 1.53M 3s
+  8250K .......... .......... .......... .......... .......... 67% 1.29M 3s
+  8300K .......... .......... .......... .......... .......... 68% 1.27M 3s
+  8350K .......... .......... .......... .......... .......... 68% 1.38M 3s
+  8400K .......... .......... .......... .......... .......... 68% 1.30M 3s
+  8450K .......... .......... .......... .......... .......... 69% 8.50M 3s
+  8500K .......... .......... .......... .......... .......... 69% 8.74M 3s
+  8550K .......... .......... .......... .......... .......... 70% 1.05M 3s
+  8600K .......... .......... .......... .......... .......... 70% 1.39M 3s
+  8650K .......... .......... .......... .......... .......... 70% 1.34M 3s
+  8700K .......... .......... .......... .......... .......... 71% 1.31M 3s
+  8750K .......... .......... .......... .......... .......... 71% 1.41M 3s
+  8800K .......... .......... .......... .......... .......... 72% 1.83M 3s
+  8850K .......... .......... .......... .......... .......... 72% 1.93M 2s
+  8900K .......... .......... .......... .......... .......... 72% 1.92M 2s
+  8950K .......... .......... .......... .......... .......... 73% 2.65M 2s
+  9000K .......... .......... .......... .......... .......... 73% 2.49M 2s
+  9050K .......... .......... .......... .......... .......... 74% 1.94M 2s
+  9100K .......... .......... .......... .......... .......... 74% 2.30M 2s
+  9150K .......... .......... .......... .......... .......... 75% 2.41M 2s
+  9200K .......... .......... .......... .......... .......... 75% 1.48M 2s
+  9250K .......... .......... .......... .......... .......... 75% 3.27M 2s
+  9300K .......... .......... .......... .......... .......... 76% 5.25M 2s
+  9350K .......... .......... .......... .......... .......... 76% 3.94M 2s
+  9400K .......... .......... .......... .......... .......... 77% 2.59M 2s
+  9450K .......... .......... .......... .......... .......... 77% 1.88M 2s
+  9500K .......... .......... .......... .......... .......... 77% 3.22M 2s
+  9550K .......... .......... .......... .......... .......... 78% 2.45M 2s
+  9600K .......... .......... .......... .......... .......... 78% 2.56M 2s
+  9650K .......... .......... .......... .......... .......... 79% 2.39M 2s
+  9700K .......... .......... .......... .......... .......... 79% 2.42M 2s
+  9750K .......... .......... .......... .......... .......... 79% 2.66M 2s
+  9800K .......... .......... .......... .......... .......... 80% 2.70M 2s
+  9850K .......... .......... .......... .......... .......... 80% 2.91M 2s
+  9900K .......... .......... .......... .......... .......... 81% 3.03M 2s
+  9950K .......... .......... .......... .......... .......... 81% 2.74M 2s
+ 10000K .......... .......... .......... .......... .......... 81% 4.02M 2s
+ 10050K .......... .......... .......... .......... .......... 82% 2.21M 1s
+ 10100K .......... .......... .......... .......... .......... 82% 2.96M 1s
+ 10150K .......... .......... .......... .......... .......... 83% 2.72M 1s
+ 10200K .......... .......... .......... .......... .......... 83% 2.97M 1s
+ 10250K .......... .......... .......... .......... .......... 83% 2.90M 1s
+ 10300K .......... .......... .......... .......... .......... 84% 2.88M 1s
+ 10350K .......... .......... .......... .......... .......... 84% 2.59M 1s
+ 10400K .......... .......... .......... .......... .......... 85% 3.06M 1s
+ 10450K .......... .......... .......... .......... .......... 85% 2.42M 1s
+ 10500K .......... .......... .......... .......... .......... 86% 2.94M 1s
+ 10550K .......... .......... .......... .......... .......... 86% 2.43M 1s
+ 10600K .......... .......... .......... .......... .......... 86% 2.88M 1s
+ 10650K .......... .......... .......... .......... .......... 87% 3.53M 1s
+ 10700K .......... .......... .......... .......... .......... 87% 2.61M 1s
+ 10750K .......... .......... .......... .......... .......... 88% 2.28M 1s
+ 10800K .......... .......... .......... .......... .......... 88% 1.36M 1s
+ 10850K .......... .......... .......... .......... .......... 88% 1.54M 1s
+ 10900K .......... .......... .......... .......... .......... 89% 1.64M 1s
+ 10950K .......... .......... .......... .......... .......... 89% 1.59M 1s
+ 11000K .......... .......... .......... .......... .......... 90% 2.79M 1s
+ 11050K .......... .......... .......... .......... .......... 90% 2.03M 1s
+ 11100K .......... .......... .......... .......... .......... 90% 2.17M 1s
+ 11150K .......... .......... .......... .......... .......... 91% 2.26M 1s
+ 11200K .......... .......... .......... .......... .......... 91% 2.00M 1s
+ 11250K .......... .......... .......... .......... .......... 92% 2.35M 1s
+ 11300K .......... .......... .......... .......... .......... 92% 2.11M 1s
+ 11350K .......... .......... .......... .......... .......... 92% 3.52M 1s
+ 11400K .......... .......... .......... .......... .......... 93% 1.75M 1s
+ 11450K .......... .......... .......... .......... .......... 93% 1.78M 1s
+ 11500K .......... .......... .......... .......... .......... 94% 4.10M 0s
+ 11550K .......... .......... .......... .......... .......... 94% 4.00M 0s
+ 11600K .......... .......... .......... .......... .......... 94% 1.30M 0s
+ 11650K .......... .......... .......... .......... .......... 95% 2.41M 0s
+ 11700K .......... .......... .......... .......... .......... 95% 2.23M 0s
+ 11750K .......... .......... .......... .......... .......... 96% 3.19M 0s
+ 11800K .......... .......... .......... .......... .......... 96% 5.24M 0s
+ 11850K .......... .......... .......... .......... .......... 97% 4.10M 0s
+ 11900K .......... .......... .......... .......... .......... 97% 2.05M 0s
+ 11950K .......... .......... .......... .......... .......... 97% 1.78M 0s
+ 12000K .......... .......... .......... .......... .......... 98% 1.77M 0s
+ 12050K .......... .......... .......... .......... .......... 98% 1.64M 0s
+ 12100K .......... .......... .......... .......... .......... 99% 1.61M 0s
+ 12150K .......... .......... .......... .......... .......... 99% 1.63M 0s
+ 12200K .......... .......... .......... .......... .......... 99% 2.04M 0s
+ 12250K .......... ...                                        100% 1.66M=7.9s
+
+2020-04-30 06:41:29 (1.51 MB/s) - ‘pandoc-2.9.1.1-1-amd64.deb’ saved [12557972/12557972]
+
+Removing intermediate container 07ee43c9d130
+ ---> fe450d9e5584
+Step 5/8 : RUN dpkg -i pandoc-2.9.1.1-1-amd64.deb
+ ---> Running in f4882996df62
+Selecting previously unselected package pandoc.
+(Reading database ... 10347 files and directories currently installed.)
+Preparing to unpack pandoc-2.9.1.1-1-amd64.deb ...
+Unpacking pandoc (2.9.1.1-1) ...
+Setting up pandoc (2.9.1.1-1) ...
+Removing intermediate container f4882996df62
+ ---> 5a929b78743c
+Step 6/8 : RUN pip install jupyter watchdog[watchmedo] jupyter_client ipykernel jupyter
+ ---> Running in a0260358f31a
+Collecting jupyter
+  Downloading jupyter-1.0.0-py2.py3-none-any.whl (2.7 kB)
+Collecting watchdog[watchmedo]
+  Downloading watchdog-0.10.2.tar.gz (95 kB)
+Collecting jupyter_client
+  Downloading jupyter_client-6.1.3-py3-none-any.whl (106 kB)
+Collecting ipykernel
+  Downloading ipykernel-5.2.1-py3-none-any.whl (118 kB)
+Collecting notebook
+  Downloading notebook-6.0.3-py3-none-any.whl (9.7 MB)
+Collecting qtconsole
+  Downloading qtconsole-4.7.3-py2.py3-none-any.whl (117 kB)
+Collecting jupyter-console
+  Downloading jupyter_console-6.1.0-py2.py3-none-any.whl (21 kB)
+Collecting nbconvert
+  Downloading nbconvert-5.6.1-py2.py3-none-any.whl (455 kB)
+Collecting ipywidgets
+  Downloading ipywidgets-7.5.1-py2.py3-none-any.whl (121 kB)
+Collecting pathtools>=0.1.1
+  Downloading pathtools-0.1.2.tar.gz (11 kB)
+Collecting PyYAML>=3.10
+  Downloading PyYAML-5.3.1.tar.gz (269 kB)
+Collecting argh>=0.24.1
+  Downloading argh-0.26.2-py2.py3-none-any.whl (30 kB)
+Collecting traitlets
+  Downloading traitlets-4.3.3-py2.py3-none-any.whl (75 kB)
+Collecting pyzmq>=13
+  Downloading pyzmq-19.0.0-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
+Collecting jupyter-core>=4.6.0
+  Downloading jupyter_core-4.6.3-py2.py3-none-any.whl (83 kB)
+Collecting python-dateutil>=2.1
+  Downloading python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting tornado>=4.1
+  Downloading tornado-6.0.4.tar.gz (496 kB)
+Collecting ipython>=5.0.0
+  Downloading ipython-7.13.0-py3-none-any.whl (780 kB)
+Collecting jinja2
+  Downloading Jinja2-2.11.2-py2.py3-none-any.whl (125 kB)
+Collecting Send2Trash
+  Downloading Send2Trash-1.5.0-py3-none-any.whl (12 kB)
+Collecting prometheus-client
+  Downloading prometheus_client-0.7.1.tar.gz (38 kB)
+Collecting terminado>=0.8.1
+  Downloading terminado-0.8.3-py2.py3-none-any.whl (33 kB)
+Collecting nbformat
+  Downloading nbformat-5.0.6-py3-none-any.whl (170 kB)
+Collecting ipython-genutils
+  Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+Collecting pygments
+  Downloading Pygments-2.6.1-py3-none-any.whl (914 kB)
+Collecting qtpy
+  Downloading QtPy-1.9.0-py2.py3-none-any.whl (54 kB)
+Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0
+  Downloading prompt_toolkit-3.0.5-py3-none-any.whl (351 kB)
+Collecting pandocfilters>=1.4.1
+  Downloading pandocfilters-1.4.2.tar.gz (14 kB)
+Collecting mistune<2,>=0.8.1
+  Downloading mistune-0.8.4-py2.py3-none-any.whl (16 kB)
+Collecting entrypoints>=0.2.2
+  Downloading entrypoints-0.3-py2.py3-none-any.whl (11 kB)
+Collecting testpath
+  Downloading testpath-0.4.4-py2.py3-none-any.whl (163 kB)
+Collecting defusedxml
+  Downloading defusedxml-0.6.0-py2.py3-none-any.whl (23 kB)
+Collecting bleach
+  Downloading bleach-3.1.5-py2.py3-none-any.whl (151 kB)
+Collecting widgetsnbextension~=3.5.0
+  Downloading widgetsnbextension-3.5.1-py2.py3-none-any.whl (2.2 MB)
+Collecting six
+  Downloading six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting decorator
+  Downloading decorator-4.4.2-py2.py3-none-any.whl (9.2 kB)
+Collecting pickleshare
+  Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+Requirement already satisfied: setuptools>=18.5 in /usr/local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel) (41.2.0)
+Collecting jedi>=0.10
+  Downloading jedi-0.17.0-py2.py3-none-any.whl (1.1 MB)
+Collecting pexpect; sys_platform != "win32"
+  Downloading pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
+Collecting backcall
+  Downloading backcall-0.1.0.tar.gz (9.7 kB)
+Collecting MarkupSafe>=0.23
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting ptyprocess; os_name != "nt"
+  Downloading ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
+Collecting jsonschema!=2.5.0,>=2.4
+  Downloading jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)
+Collecting wcwidth
+  Downloading wcwidth-0.1.9-py2.py3-none-any.whl (19 kB)
+Collecting packaging
+  Downloading packaging-20.3-py2.py3-none-any.whl (37 kB)
+Collecting webencodings
+  Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Collecting parso>=0.7.0
+  Downloading parso-0.7.0-py2.py3-none-any.whl (100 kB)
+Collecting pyrsistent>=0.14.0
+  Downloading pyrsistent-0.16.0.tar.gz (108 kB)
+Collecting attrs>=17.4.0
+  Downloading attrs-19.3.0-py2.py3-none-any.whl (39 kB)
+Collecting importlib-metadata; python_version < "3.8"
+  Downloading importlib_metadata-1.6.0-py2.py3-none-any.whl (30 kB)
+Collecting pyparsing>=2.0.2
+  Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.1.0-py3-none-any.whl (4.9 kB)
+Building wheels for collected packages: watchdog, pathtools, PyYAML, tornado, prometheus-client, pandocfilters, backcall, pyrsistent
+  Building wheel for watchdog (setup.py): started
+  Building wheel for watchdog (setup.py): finished with status 'done'
+  Created wheel for watchdog: filename=watchdog-0.10.2-py3-none-any.whl size=73604 sha256=8cea39858a61f783ddbaf8aec1889c16118f167435aede3136f1ff5344a90575
+  Stored in directory: /root/.cache/pip/wheels/36/93/24/29e375ee74e0f178889e6906cb73e693e9f06a5f589dcee6b9
+  Building wheel for pathtools (setup.py): started
+  Building wheel for pathtools (setup.py): finished with status 'done'
+  Created wheel for pathtools: filename=pathtools-0.1.2-py3-none-any.whl size=8785 sha256=b149ebcdb90d5087399631155b69af3ba4ab5b6574a9cc46f44f3f4e1911fbd4
+  Stored in directory: /root/.cache/pip/wheels/3e/31/09/fa59cef12cdcfecc627b3d24273699f390e71828921b2cbba2
+  Building wheel for PyYAML (setup.py): started
+  Building wheel for PyYAML (setup.py): finished with status 'done'
+  Created wheel for PyYAML: filename=PyYAML-5.3.1-cp37-cp37m-linux_x86_64.whl size=44620 sha256=75560d28acb265bc9b53c29a44b83d64cfe943206e19652641056feb94f07ce6
+  Stored in directory: /root/.cache/pip/wheels/5e/03/1e/e1e954795d6f35dfc7b637fe2277bff021303bd9570ecea653
+  Building wheel for tornado (setup.py): started
+  Building wheel for tornado (setup.py): finished with status 'done'
+  Created wheel for tornado: filename=tornado-6.0.4-cp37-cp37m-linux_x86_64.whl size=415150 sha256=5ce211ec24ce1083efda309a6dbabc1a7e87ddc71d4a4d017de0ae9fbbf881ce
+  Stored in directory: /root/.cache/pip/wheels/7d/14/fa/d88fb5da77d813ea0ffca38a2ab2a052874e9e1142bad0b348
+  Building wheel for prometheus-client (setup.py): started
+  Building wheel for prometheus-client (setup.py): finished with status 'done'
+  Created wheel for prometheus-client: filename=prometheus_client-0.7.1-py3-none-any.whl size=41402 sha256=ab10359cee2032883f1092dc75aad36d7ce29afc1dc8b8e36b7e26debe500546
+  Stored in directory: /root/.cache/pip/wheels/30/0c/26/59ba285bf65dc79d195e9b25e2ddde4c61070422729b0cd914
+  Building wheel for pandocfilters (setup.py): started
+  Building wheel for pandocfilters (setup.py): finished with status 'done'
+  Created wheel for pandocfilters: filename=pandocfilters-1.4.2-py3-none-any.whl size=7855 sha256=6aa0e0a2aa364195a0a1f0947803492e73b949f5a6873ced2e80e468405ea7c3
+  Stored in directory: /root/.cache/pip/wheels/63/99/01/9fe785b86d1e091a6b2a61e06ddb3d8eb1bc9acae5933d4740
+  Building wheel for backcall (setup.py): started
+  Building wheel for backcall (setup.py): finished with status 'done'
+  Created wheel for backcall: filename=backcall-0.1.0-py3-none-any.whl size=10412 sha256=45ce3f31afd4adf1bbf3ae9aaff2d666f25ef133133ec98888a002179dbb3a7f
+  Stored in directory: /root/.cache/pip/wheels/9e/56/4f/da13e448a8a5b8671b2954600d5355cf36e557c7aa5020139b
+  Building wheel for pyrsistent (setup.py): started
+  Building wheel for pyrsistent (setup.py): finished with status 'done'
+  Created wheel for pyrsistent: filename=pyrsistent-0.16.0-cp37-cp37m-linux_x86_64.whl size=56582 sha256=08820a26c4448bcce70bdb60b85fd998ad7f5b090ad8c3887f8e54e2ae6874fd
+  Stored in directory: /root/.cache/pip/wheels/22/52/11/f0920f95c23ed7d2d0b05f2b7b2f4509e87a20cfe8ea43d987
+Successfully built watchdog pathtools PyYAML tornado prometheus-client pandocfilters backcall pyrsistent
+Installing collected packages: MarkupSafe, jinja2, six, ipython-genutils, decorator, traitlets, jupyter-core, Send2Trash, tornado, pyzmq, python-dateutil, jupyter-client, pickleshare, pygments, parso, jedi, ptyprocess, pexpect, backcall, wcwidth, prompt-toolkit, ipython, ipykernel, pandocfilters, pyrsistent, attrs, zipp, importlib-metadata, jsonschema, nbformat, mistune, entrypoints, testpath, defusedxml, pyparsing, packaging, webencodings, bleach, nbconvert, prometheus-client, terminado, notebook, qtpy, qtconsole, jupyter-console, widgetsnbextension, ipywidgets, jupyter, pathtools, PyYAML, argh, watchdog
+Successfully installed MarkupSafe-1.1.1 PyYAML-5.3.1 Send2Trash-1.5.0 argh-0.26.2 attrs-19.3.0 backcall-0.1.0 bleach-3.1.5 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 importlib-metadata-1.6.0 ipykernel-5.2.1 ipython-7.13.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.17.0 jinja2-2.11.2 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-6.1.3 jupyter-console-6.1.0 jupyter-core-4.6.3 mistune-0.8.4 nbconvert-5.6.1 nbformat-5.0.6 notebook-6.0.3 packaging-20.3 pandocfilters-1.4.2 parso-0.7.0 pathtools-0.1.2 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.7.1 prompt-toolkit-3.0.5 ptyprocess-0.6.0 pygments-2.6.1 pyparsing-2.4.7 pyrsistent-0.16.0 python-dateutil-2.8.1 pyzmq-19.0.0 qtconsole-4.7.3 qtpy-1.9.0 six-1.14.0 terminado-0.8.3 testpath-0.4.4 tornado-6.0.4 traitlets-4.3.3 watchdog-0.10.2 wcwidth-0.1.9 webencodings-0.5.1 widgetsnbextension-3.5.1 zipp-3.1.0
+Removing intermediate container a0260358f31a
+ ---> 8dd52075f797
+Step 7/8 : RUN python3 -m ipykernel install --user
+ ---> Running in 4d1422e1314b
+Installed kernelspec python3 in /root/.local/share/jupyter/kernels/python3
+Removing intermediate container 4d1422e1314b
+ ---> 96d53f7df365
+Step 8/8 : RUN pip install nbdev==0.2.18
+ ---> Running in 4a0579237b97
+Collecting nbdev==0.2.18
+  Downloading nbdev-0.2.18-py3-none-any.whl (45 kB)
+Collecting fastscript
+  Downloading fastscript-0.1.4-py3-none-any.whl (11 kB)
+Requirement already satisfied: nbformat>=4.4.0 in /usr/local/lib/python3.7/site-packages (from nbdev==0.2.18) (5.0.6)
+Requirement already satisfied: packaging in /usr/local/lib/python3.7/site-packages (from nbdev==0.2.18) (20.3)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.7/site-packages (from nbdev==0.2.18) (5.3.1)
+Requirement already satisfied: nbconvert>=5.6.1 in /usr/local/lib/python3.7/site-packages (from nbdev==0.2.18) (5.6.1)
+Requirement already satisfied: traitlets>=4.1 in /usr/local/lib/python3.7/site-packages (from nbformat>=4.4.0->nbdev==0.2.18) (4.3.3)
+Requirement already satisfied: jupyter-core in /usr/local/lib/python3.7/site-packages (from nbformat>=4.4.0->nbdev==0.2.18) (4.6.3)
+Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /usr/local/lib/python3.7/site-packages (from nbformat>=4.4.0->nbdev==0.2.18) (3.2.0)
+Requirement already satisfied: ipython-genutils in /usr/local/lib/python3.7/site-packages (from nbformat>=4.4.0->nbdev==0.2.18) (0.2.0)
+Requirement already satisfied: six in /usr/local/lib/python3.7/site-packages (from packaging->nbdev==0.2.18) (1.14.0)
+Requirement already satisfied: pyparsing>=2.0.2 in /usr/local/lib/python3.7/site-packages (from packaging->nbdev==0.2.18) (2.4.7)
+Requirement already satisfied: mistune<2,>=0.8.1 in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (0.8.4)
+Requirement already satisfied: entrypoints>=0.2.2 in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (0.3)
+Requirement already satisfied: testpath in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (0.4.4)
+Requirement already satisfied: pandocfilters>=1.4.1 in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (1.4.2)
+Requirement already satisfied: bleach in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (3.1.5)
+Requirement already satisfied: defusedxml in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (0.6.0)
+Requirement already satisfied: pygments in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (2.6.1)
+Requirement already satisfied: jinja2>=2.4 in /usr/local/lib/python3.7/site-packages (from nbconvert>=5.6.1->nbdev==0.2.18) (2.11.2)
+Requirement already satisfied: decorator in /usr/local/lib/python3.7/site-packages (from traitlets>=4.1->nbformat>=4.4.0->nbdev==0.2.18) (4.4.2)
+Requirement already satisfied: importlib-metadata; python_version < "3.8" in /usr/local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.4.0->nbdev==0.2.18) (1.6.0)
+Requirement already satisfied: pyrsistent>=0.14.0 in /usr/local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.4.0->nbdev==0.2.18) (0.16.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.4.0->nbdev==0.2.18) (41.2.0)
+Requirement already satisfied: attrs>=17.4.0 in /usr/local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat>=4.4.0->nbdev==0.2.18) (19.3.0)
+Requirement already satisfied: webencodings in /usr/local/lib/python3.7/site-packages (from bleach->nbconvert>=5.6.1->nbdev==0.2.18) (0.5.1)
+Requirement already satisfied: MarkupSafe>=0.23 in /usr/local/lib/python3.7/site-packages (from jinja2>=2.4->nbconvert>=5.6.1->nbdev==0.2.18) (1.1.1)
+Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.7/site-packages (from importlib-metadata; python_version < "3.8"->jsonschema!=2.5.0,>=2.4->nbformat>=4.4.0->nbdev==0.2.18) (3.1.0)
+Installing collected packages: fastscript, nbdev
+Successfully installed fastscript-0.1.4 nbdev-0.2.18
+Removing intermediate container 4a0579237b97
+ ---> 3166f15f3ea5
+Successfully built 3166f15f3ea5
+Successfully tagged hamelsmu/fastpages-nbdev:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+docker build --no-cache -t hamelsmu/fastpages-jekyll -f _action_files/fastpages-jekyll.Dockerfile .
+Sending build context to Docker daemon  398.9MB
+Step 1/5 : FROM hamelsmu/fastpages-jekyll
+latest: Pulling from hamelsmu/fastpages-jekyll
+9d48c3bd43c5: Pull complete                                                                                             9ce9598067e7: Pull complete                                                                                             278f4c997324: Pull complete                                                                                             867dd521f6d0: Pull complete                                                                                             c69cba5b7867: Pull complete                                                                                             828c8f2de574: Pull complete                                                                                             a14ce535c922: Pull complete                                                                                             3b132b61aafd: Pull complete                                                                                             1a943cbef622: Pull complete                                                                                             Digest: sha256:d35e5594229f126dc18595a0c83a5c1de5e43e3e91e6695206ecb601853cb704
+Status: Downloaded newer image for hamelsmu/fastpages-jekyll:latest
+ ---> 04c7d6ca018b
+Step 2/5 : COPY . .
+ ---> e676ba837493
+Step 3/5 : RUN chmod -R 777 .
+ ---> Running in 80d9cd07d12c
+Removing intermediate container 80d9cd07d12c
+ ---> 836d5c862270
+Step 4/5 : RUN gem install bundler
+ ---> Running in 30a609066b98
+Successfully installed bundler-2.1.4
+1 gem installed
+Removing intermediate container 30a609066b98
+ ---> 93c192f5d2a4
+Step 5/5 : RUN jekyll build
+ ---> Running in 8e5452be9b38
+ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux-musl]
+Configuration file: /srv/jekyll/_config.yml
+      Remote Theme: Using theme jekyll/minima
+            Source: /srv/jekyll
+       Destination: /srv/jekyll/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+      Remote Theme: Using theme jekyll/minima
+       Jekyll Feed: Generating feed for posts
+                    done in 3470.014 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
+Removing intermediate container 8e5452be9b38
+ ---> 8a9643c7141b
+Successfully built 8a9643c7141b
+Successfully tagged hamelsmu/fastpages-jekyll:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+docker-compose build --force-rm --no-cache
+jekyll uses an image, skipping
+Building fastpages
+Step 1/7 : FROM hamelsmu/fastpages-nbdev
+ ---> 3166f15f3ea5
+Step 2/7 : WORKDIR /fastpages
+ ---> Running in e58370b8a6ce
+Removing intermediate container e58370b8a6ce
+ ---> e0952a366873
+Step 3/7 : COPY . .
+ ---> 12d937537352
+Step 4/7 : RUN chmod u+x action_entrypoint.sh
+ ---> Running in 8c3c409672a0
+Removing intermediate container 8c3c409672a0
+ ---> 2b0e28294b28
+Step 5/7 : RUN chmod u+x word2post.sh
+ ---> Running in a2c18fcc7a83
+Removing intermediate container a2c18fcc7a83
+ ---> 6e43e474c0d6
+Step 6/7 : RUN dos2unix /fastpages/*.sh
+ ---> Running in c441bfd3f64c
+dos2unix: converting file /fastpages/action_entrypoint.sh to Unix format...
+dos2unix: converting file /fastpages/pr_comment.sh to Unix format...
+dos2unix: converting file /fastpages/word2post.sh to Unix format...
+Removing intermediate container c441bfd3f64c
+ ---> bfabe729e04a
+Step 7/7 : CMD [ "/fastpages/action_entrypoint.sh" ]
+ ---> Running in 368f7f53de96
+Removing intermediate container 368f7f53de96
+ ---> 3525cf703553
+Successfully built 3525cf703553
+Successfully tagged fastpages-dev:latest
+Building converter
+Step 1/7 : FROM hamelsmu/fastpages-nbdev
+ ---> 3166f15f3ea5
+Step 2/7 : WORKDIR /fastpages
+ ---> Running in 0463cdf295f0
+Removing intermediate container 0463cdf295f0
+ ---> e43836b69542
+Step 3/7 : COPY . .
+ ---> f1684a19db39
+Step 4/7 : RUN chmod u+x action_entrypoint.sh
+ ---> Running in 60a2cd044763
+Removing intermediate container 60a2cd044763
+ ---> 1eceef92d3fa
+Step 5/7 : RUN chmod u+x word2post.sh
+ ---> Running in 84b3239a7a43
+Removing intermediate container 84b3239a7a43
+ ---> 75f6bd82a2dd
+Step 6/7 : RUN dos2unix /fastpages/*.sh
+ ---> Running in d428f9342e9d
+dos2unix: converting file /fastpages/action_entrypoint.sh to Unix format...
+dos2unix: converting file /fastpages/pr_comment.sh to Unix format...
+dos2unix: converting file /fastpages/word2post.sh to Unix format...
+Removing intermediate container d428f9342e9d
+ ---> f14cb63adb0c
+Step 7/7 : CMD [ "/fastpages/action_entrypoint.sh" ]
+ ---> Running in f80fc7131b63
+Removing intermediate container f80fc7131b63
+ ---> f6d2889d3d37
+Successfully built f6d2889d3d37
+Successfully tagged fastpages-dev:latest
+Building watcher
+Step 1/7 : FROM hamelsmu/fastpages-nbdev
+ ---> 3166f15f3ea5
+Step 2/7 : WORKDIR /fastpages
+ ---> Running in d235f5032eee
+Removing intermediate container d235f5032eee
+ ---> c59f91521c35
+Step 3/7 : COPY . .
+ ---> 7be330f13d72
+Step 4/7 : RUN chmod u+x action_entrypoint.sh
+ ---> Running in ff435841996b
+Removing intermediate container ff435841996b
+ ---> e74704d3752c
+Step 5/7 : RUN chmod u+x word2post.sh
+ ---> Running in 93a4dedf1869
+Removing intermediate container 93a4dedf1869
+ ---> 3aa424acf74a
+Step 6/7 : RUN dos2unix /fastpages/*.sh
+ ---> Running in b0ae4beb684d
+dos2unix: converting file /fastpages/action_entrypoint.sh to Unix format...
+dos2unix: converting file /fastpages/pr_comment.sh to Unix format...
+dos2unix: converting file /fastpages/word2post.sh to Unix format...
+Removing intermediate container b0ae4beb684d
+ ---> 138da631c844
+Step 7/7 : CMD [ "/fastpages/action_entrypoint.sh" ]
+ ---> Running in 433f78830e2c
+Removing intermediate container 433f78830e2c
+ ---> a5a4cd2d817a
+Successfully built a5a4cd2d817a
+Successfully tagged fastpages-dev:latest
+
+Jesse@Tommy MINGW64 ~/documents/github/projects/blog (master)
+$ "C:\Program Files (x86)\GnuWin32\bin\make.exe" server
+docker-compose down --remove-orphans || true;
+Removing network blog_default
+WARNING: Network blog_default not found.
+docker-compose up
+Creating network "blog_default" with the default driver
+Creating blog_converter_1 ... done                                                                                      Creating blog_fastpages_1 ... done                                                                                      Creating blog_jekyll_1    ... done                                                                                      Creating blog_watcher_1   ... done                                                                                      Attaching to blog_converter_1, blog_fastpages_1, blog_watcher_1, blog_jekyll_1
+converter_1  | Agent pid 7
+converter_1  | === Running Locally: All assets expected to be in the directory /data ===
+fastpages_1  | Agent pid 7
+fastpages_1  | === Running Locally: All assets expected to be in the directory /data ===
+converter_1  | converting: _notebooks/2020-03-23-analyse.ipynb
+fastpages_1  | converting: _notebooks/2020-03-23-analyse.ipynb
+jekyll_1     | Successfully installed bundler-2.1.4
+jekyll_1     | 1 gem installed
+blog_converter_1 exited with code 0
+blog_fastpages_1 exited with code 0
+jekyll_1     | ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux-musl]
+jekyll_1     | Configuration file: /data/_config.yml
+jekyll_1     |       Remote Theme: Using theme jekyll/minima
+jekyll_1     |             Source: /data
+jekyll_1     |        Destination: /data/_site
+jekyll_1     |  Incremental build: disabled. Enable with --incremental
+jekyll_1     |       Generating...
+jekyll_1     |       Remote Theme: Using theme jekyll/minima
+jekyll_1     |        Jekyll Feed: Generating feed for posts
+jekyll_1     |                     done in 29.189 seconds.
+jekyll_1     |  Auto-regeneration: enabled for '/data'
+jekyll_1     |     Server address: http://0.0.0.0:4000/blog/
