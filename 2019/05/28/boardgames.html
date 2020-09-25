@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Predicting the value of a house? | Jesse van Elteren</title>
+<title>Exploring 13M board game reviews | Jesse van Elteren</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Predicting the value of a house?" />
+<meta property="og:title" content="Exploring 13M board game reviews" />
 <meta name="author" content="Jesse van Elteren" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Top 3% on data science competition" />
-<meta property="og:description" content="Top 3% on data science competition" />
-<link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html" />
-<meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html" />
+<meta name="description" content="Making a recommender system for boardgames" />
+<meta property="og:description" content="Making a recommender system for boardgames" />
+<link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html" />
+<meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/housing.png" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/boardgames.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-09-24T00:00:00-05:00" />
+<meta property="article:published_time" content="2019-05-28T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Top 3% on data science competition","@type":"BlogPosting","headline":"Predicting the value of a house?","dateModified":"2020-09-24T00:00:00-05:00","datePublished":"2020-09-24T00:00:00-05:00","url":"https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html"},"image":"https://jvanelteren.github.io/blog/blog/images/housing.png","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Making a recommender system for boardgames","@type":"BlogPosting","headline":"Exploring 13M board game reviews","dateModified":"2019-05-28T00:00:00-05:00","datePublished":"2019-05-28T00:00:00-05:00","url":"https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html"},"image":"https://jvanelteren.github.io/blog/blog/images/boardgames.jpg","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jvanelteren.github.io/blog/blog/feed.xml" title="Jesse van Elteren" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -27,21 +27,21 @@
 <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-1302238-4','auto');ga('require','displayfeatures');ga('send','pageview');</script>
 
 <link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Predicting the value of a house? | Jesse van Elteren</title>
+<title>Exploring 13M board game reviews | Jesse van Elteren</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Predicting the value of a house?" />
+<meta property="og:title" content="Exploring 13M board game reviews" />
 <meta name="author" content="Jesse van Elteren" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Top 3% on data science competition" />
-<meta property="og:description" content="Top 3% on data science competition" />
-<link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html" />
-<meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html" />
+<meta name="description" content="Making a recommender system for boardgames" />
+<meta property="og:description" content="Making a recommender system for boardgames" />
+<link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html" />
+<meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/housing.png" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/boardgames.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-09-24T00:00:00-05:00" />
+<meta property="article:published_time" content="2019-05-28T00:00:00-05:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Top 3% on data science competition","@type":"BlogPosting","headline":"Predicting the value of a house?","dateModified":"2020-09-24T00:00:00-05:00","datePublished":"2020-09-24T00:00:00-05:00","url":"https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/09/24/housing.html"},"image":"https://jvanelteren.github.io/blog/blog/images/housing.png","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Making a recommender system for boardgames","@type":"BlogPosting","headline":"Exploring 13M board game reviews","dateModified":"2019-05-28T00:00:00-05:00","datePublished":"2019-05-28T00:00:00-05:00","url":"https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2019/05/28/boardgames.html"},"image":"https://jvanelteren.github.io/blog/blog/images/boardgames.jpg","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -103,8 +103,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Predicting the value of a house?</h1><p class="page-description">Top 3% on data science competition</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-09-24T00:00:00-05:00" itemprop="datePublished">
-        Sep 24, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Exploring 13M board game reviews</h1><p class="page-description">Making a recommender system for boardgames</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2019-05-28T00:00:00-05:00" itemprop="datePublished">
+        May 28, 2019
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">Jesse van Elteren</span></span>
@@ -122,19 +122,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/jvanelteren/blog/tree/master/_notebooks/2020-7-26-housing.ipynb" role="button" target="_blank">
+    <a href="https://github.com/jvanelteren/blog/tree/master/_notebooks/2019-05-28-boardgames.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/jvanelteren/blog/master?filepath=_notebooks%2F2020-7-26-housing.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/jvanelteren/blog/master?filepath=_notebooks%2F2019-05-28-boardgames.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/jvanelteren/blog/blob/master/_notebooks/2020-7-26-housing.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/jvanelteren/blog/blob/master/_notebooks/2019-05-28-boardgames.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -146,7 +146,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-7-26-housing.ipynb
+# file to edit: _notebooks/2019-05-28-boardgames.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -160,11 +160,15 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Recently I’ve made my way into Kaggle. If it’s new for you, I highly recommend checking it out. Kaggle is a platform where organizations host data science competitions. They come up with a data science challenge, make the data available to Kaggle users, and many data scientist worldwide compete to get the highest score on the leaderboard. After a defined period the competition ends and the winner is awarded with a (monetary) price.</p>
-<p>Participants also share their code (kernels), and have discussions on the data. This makes it an excellent platform to learn. The competitions can be a bit intimidating, since it can have extremely large datasets (100GB upwards), the objectives can be challenging (imaging, audio, text, combinations) and figuring out how to submit is not always trivial. But of course you can start with simpler competitions such as the <a href="https://www.kaggle.com/c/titanic">classic Titanic example</a>.</p>
-<p>Since I’m quite familiar with tabular data I decided to give the housing competition a try. <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">The training data</a> consists of many features describing about 1500 houses and their selling price. After numerous experiments I ended up with a top 3% score on the leaderboard before throwing in the proverbial towel. The rush of inching up the leaderboard made it a great experience!</p>
-<p>Afterwards I wrote about the <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion/170472">main insights, learnings and questions</a></p>
-<p>Next up: probably a imaging competition with Pytorch or fast.ai</p>
+<p>I like playing games, whether it’s on a computer on as a board game. That’s why the site boardgamegeek.com is a great resource for inspiration about great games. It has extensive information about games and what people think of them, for example with how many players it’s best to play and from what age children are ready for it. They also provide an API to interact with the site. I used this to download all the scores that users have given to games.</p>
+<p>Using these scores it’s possible to let the computer identify certain latent factors behind games and users. This technique is called collaborative filtering, and it’s the same as Netflix uses to recommend what to watch next. Or amazon.com to advise on your next purchase.</p>
+<p>In the end what I did was:</p>
+<ul>
+<li>Make it into a <a href="https://www.kaggle.com/jvanelteren/boardgamegeek-reviews">Kaggle dataset</a></li>
+<li>Did some <a href="https://www.kaggle.com/jvanelteren/exploring-the-13m-reviews-bgg-dataset">exploratory data analysis</a></li>
+<li>Got <a href="https://www.kaggle.com/jvanelteren/collaborative-filtering-defining-similar-games">collaborative filtering</a> working</li>
+<li>Made it into <a href="https://bgg.onrender.com/">a webapp, currently offline</a> where people can search for a game and the app will display the games the user probably likes</li>
+</ul>
 
 </div>
 </div>
@@ -181,7 +185,7 @@ window.onload = wrap_img;
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/blog/2020/09/24/housing.html" hidden></a>
+</script><a class="u-url" href="/blog/2019/05/28/boardgames.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
