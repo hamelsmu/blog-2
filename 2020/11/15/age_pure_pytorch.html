@@ -14,11 +14,11 @@
 <link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html" />
 <meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/gcp.png" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/age_recognition.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-15T00:00:00-06:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Predicting a person’s age (work-in-progress)","@type":"BlogPosting","headline":"Face2Age","dateModified":"2020-11-15T00:00:00-06:00","datePublished":"2020-11-15T00:00:00-06:00","url":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html"},"image":"https://jvanelteren.github.io/blog/blog/images/gcp.png","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Predicting a person’s age (work-in-progress)","@type":"BlogPosting","headline":"Face2Age","dateModified":"2020-11-15T00:00:00-06:00","datePublished":"2020-11-15T00:00:00-06:00","url":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html"},"image":"https://jvanelteren.github.io/blog/blog/images/age_recognition.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jvanelteren.github.io/blog/blog/feed.xml" title="Jesse van Elteren" /><!-- the google_analytics_id gets auto inserted from the config file -->
 
@@ -37,11 +37,11 @@
 <link rel="canonical" href="https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html" />
 <meta property="og:url" content="https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html" />
 <meta property="og:site_name" content="Jesse van Elteren" />
-<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/gcp.png" />
+<meta property="og:image" content="https://jvanelteren.github.io/blog/blog/images/age_recognition.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-11-15T00:00:00-06:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Predicting a person’s age (work-in-progress)","@type":"BlogPosting","headline":"Face2Age","dateModified":"2020-11-15T00:00:00-06:00","datePublished":"2020-11-15T00:00:00-06:00","url":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html"},"image":"https://jvanelteren.github.io/blog/blog/images/gcp.png","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Jesse van Elteren"},"description":"Predicting a person’s age (work-in-progress)","@type":"BlogPosting","headline":"Face2Age","dateModified":"2020-11-15T00:00:00-06:00","datePublished":"2020-11-15T00:00:00-06:00","url":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://jvanelteren.github.io/blog/blog/2020/11/15/age_pure_pytorch.html"},"image":"https://jvanelteren.github.io/blog/blog/images/age_recognition.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -111,7 +111,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -158,6 +158,23 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Deep learning has seen incredible results the last couple of year. As long as you have a large enough dataset, you can transform any input to an arbitrary output. Two examples:</p>
+<ul>
+<li>Image classification where you map an image to a label (image of a frog à computer outputs ‘frog’)</li>
+<li>Sentence generation (if I start a sentence with ‘The sun is’, computer outputs ‘a huge bowl of molten lava’.</li>
+<li>Recommender system (which is the next video that will keep you watching as much as possible)
+As an aside, I’ve added the last one, since systems used on social media are executing their task so well, but a by effect is it radicalizes people. So deep learning is not without it’s ethical problems!</li>
+</ul>
+<p>In this project, I’ve taken on a image regression problem. Given an image of someone’s face, how well can we predict the age of that person? It’s a nice problem, because the answer is not always obvious: some people look older or younger than they really are. Initially the model gives more or less random predictions, but with showing it more examples and giving feedback how wrong it was, it improves itself. We don’t have to explain anything about how an old or young person looks like. Can you imagine the nightmare of trying to code how to recognize wrinkles? This is essentially the wonder of neural networks.</p>
+<p>When training a model, an important part of its performance is the metric you choose. For this task of guessing someone’s age, I’ve chosen Mean Absolute Error, basically how many years you’ve guessed wrong. A prediction of 12 on a real age of 10 means the MAE is 2, just as a prediction of 8 would have.</p>
+<p>The dataset contains about 10.000 images, I’ve trained the model on 70% of the dataset. That leaves about 3k images which the model has not seen yet and we can test it’s performance. In theory, this performance would also apply to other unseen images. In practice that remains to be seen, since the images can differ in quality, zoom in level on the face and background.</p>
+<p>We show this training dataset multiple times (epochs) to the model, and below you can see it getting better over time. Initially, it’s off by about XX years, and slowly converging to a MAE of XX years. But that Is the performance in the training set, and we are interested in it’s performance on unseen images, remember the test set. The performance there converges to around XX.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The MAE of the model on the validation dataset is 4.3. Below you see how the predictions and actuals more or less match</p>
@@ -7327,7 +7344,7 @@ z
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><div class="flash">
     <svg class="octicon octicon-info octicon octicon-info octicon octicon-info" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg>
-    <strong>Note: </strong>Some technical details on how it was build: Pytorch, Pretrained resnet-18 model. Application runs on Google Cloud Platform, with a Nginx and Gunicorn running in Docker container. Python backend in Fastapi.
+    <strong>Note: </strong>Technical details on how it was build: Pytorch, Pretrained resnet-18 model. Application runs on Google Cloud Platform, with a Nginx and Gunicorn running in Docker container. Python backend in Fastapi. Code available on <a href="https://github.com/jvanelteren/age_prediction">Github</a>, dataset on <a href="https://www.kaggle.com/frabbisw/facial-age">Kaggle</a>
 </div></p>
 
 </div>
